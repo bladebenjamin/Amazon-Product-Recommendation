@@ -1,88 +1,37 @@
-##### 📦 Amazon Product Recommendation System
+📦 Amazon Product Recommendation System
+🎯 Project Overview
+As a Data Science Manager at Amazon, I spearheaded the development of a recommendation engine to tackle "information overload." By analyzing millions of user-product interactions, this system identifies hidden patterns in consumer behavior to provide highly personalized product suggestions.
 
+💾 Dataset
+The dataset consists of 7.8 Million reviews of electronic products.
 
+Direct Data Link: Download ratings_Electronics.csv (304 MB)
 
-###### 📝 Project Context
+Attributes: userId, productId, Rating, timestamp.
 
-In the modern digital landscape, information is growing exponentially in volume, velocity, and variety. This "information overload" presents a significant dilemma for consumers facing too many choices. Recommender Systems are the premier solution, intelligently filtering products to keep users engaged and driving business growth through personalized relevance.
+Note: Due to GitHub's file size limitations (100MB), the raw .csv is hosted externally. Please download and place it in a /data folder to run the notebook locally.
 
+🛠️ Technical Implementation
+We implemented a tiered recommendation strategy:
 
+Rank-Based (Popularity): For new users with no history (Cold Start).
 
-E-commerce leaders like Amazon, Walmart, and Target invest heavily in algorithmic techniques to deliver these real-time suggestions. This project focuses on implementing these industry-standard techniques using Amazon's electronic product review data.
+Collaborative Filtering: User-User and Item-Item similarity using Cosine Similarity.
 
+Matrix Factorization (SVD): Leveraged the Surprise library to decompose the interaction matrix into latent features, significantly reducing RMSE.
 
+📈 Key Results
+Best Model: Optimized SVD.
 
+Performance: Achieved superior precision at top-k recommendations compared to baseline popularity models.
 
+Scalability: The item-item collaborative filtering approach was designed to scale across massive datasets, mirroring Amazon's production-level real-time requirements.
 
-###### 🎯 Business Objective
+🚀 How to Run
+Clone the repo: git clone https://github.com/your-username/Amazon-Product-Recommendation.git
 
-As a Data Science Manager at Amazon, I was tasked with engineering a multi-model recommendation engine. The goal is to predict customer preferences based on historical rating patterns and deliver a ranked list of products that maximizes conversion and user satisfaction.
+Install dependencies: pip install -r requirements.txt
 
+Download the data from the link above and place it in the root directory.
 
-
-
-
-###### 📂 Dataset Overview
-
-The dataset contains authentic customer ratings for electronic products, defined by:
-
-* userId:\*\* Unique customer identifier.
-* productId:\*\* Unique product identifier.
-* rating:\*\* Scale of 1 to 5.
-* timestamp:\*\* Date of review (removed during preprocessing to focus on preference patterns).
-
-
-
-###### 🛠️ Technical Methodology
-
-
-
-1. Data Sanitization \& EDA
-
-* Filtered the dataset to include only users with \*\*50+ ratings\*\* and products with \*\*5+ ratings\*\* to ensure statistical significance and reduce noise.
-* Analyzed rating distributions, identifying a strong positive bias (mostly 4-5 star ratings).
-
-
-
-2\. Rank-Based (Popularity) Recommendations
-
-* Challenge:\*\* Addressing the \*\*"Cold Start"\*\* problem for new users.
-* Solution:\*\* Developed a ranking algorithm to suggest top-rated products with high interaction counts.
-
-
-
-3\. Collaborative Filtering (User-User \& Item-Item)
-
-* Implemented similarity-based models using the \*\*Surprise library\*\*.
-* Optimized performance via \*\*GridSearchCV\*\* and \*\*Cosine Similarity\*\* metrics.
-
-
-
-4\. Matrix Factorization (SVD)
-
-* Deployed Singular Value Decomposition (SVD) to capture latent features in the user-item interaction matrix.
-* This model achieved the highest precision by identifying underlying preferences that traditional similarity models missed.
-
-
-
-###### 📊 Key Findings
-
-* The Optimized SVD model yielded the lowest RMSE, making it the primary engine for existing user personalization.
-* Collaborative filtering was effective but required optimization to manage the sparsity of the rating matrix.
-
-
-
-###### 🚀 Business Strategic Recommendations
-
-* **Hybrid Integration**: Deploy Rank-based models for non-logged-in users and SVD for high-interaction customers.
-* **Churn Prevention**: Identify users with declining predicted ratings for their favorite categories and trigger re-engagement campaigns.
-* **Continuous Optimization**: Implement a scheduled retraining pipeline to adapt to seasonal shopping trends.
-
-
-
-###### 🧰 Tech Stack
-
-* **Language**: Python 3.10+
-* **ML Libraries**: `scikit-surprise`, `scikit-learn`
-* **Data Ops**: `pandas`, `numpy`
-* **Visualization**: `seaborn`, `matplotlib`
+Open Amazon Product Recommendation System.ipynb in Jupyter or Google Colab.
