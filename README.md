@@ -2,14 +2,12 @@
 🎯 Project Overview
 As a Data Science Manager at Amazon, I spearheaded the development of a recommendation engine to tackle "information overload." By analyzing millions of user-product interactions, this system identifies hidden patterns in consumer behavior to provide highly personalized product suggestions.
 
-💾 Dataset
-The dataset consists of 7.8 Million reviews of electronic products.
+## 💾 Dataset
+The dataset consists of **7.8 Million reviews** of electronic products.
+* **Direct Data Link:** [Download ratings_Electronics.csv (304 MB)](https://drive.google.com/file/d/1XahZcR287ke7j48I7-oj0KzmmwSSvA3Y/view?usp=sharing)
+* **Attributes:** `userId`, `productId`, `Rating`, `timestamp`.
 
-Direct Data Link: Download ratings_Electronics.csv (304 MB)
-
-Attributes: userId, productId, Rating, timestamp.
-
-Note: Due to GitHub's file size limitations (100MB), the raw .csv is hosted externally. Please download and place it in a /data folder to run the notebook locally.
+> **Note:** Due to GitHub's file size limitations (100MB), the raw `.csv` is hosted externally. Please download and place it in your local directory to run the notebook.
 
 🛠️ Technical Implementation
 We implemented a tiered recommendation strategy:
